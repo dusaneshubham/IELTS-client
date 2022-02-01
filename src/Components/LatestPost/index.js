@@ -1,0 +1,56 @@
+import React, { useEffect, useState } from 'react';
+import './index.css'
+import test from '../../images/test.jpeg'
+const LatestPost = () => {
+  const [isMobile,setIsMobile]=useState(window.innerWidth<1200);
+  const str="Its description for this post. Its description for this post. Its description for this post. Its description for this post. Its description for this post.Its description for this post. Its description for this post. Its description for this post. Its description for this post. Its description for this post.Its description for this post. Its description for this post. Its description for this post. Its description for this post. Its description for this post.";
+  const getDesc=(desc)=>{
+
+    if(desc.length>170){
+      var index=desc.substring(0,160);
+      desc=index.substring(0,index.lastIndexOf(' ')) + "...";
+    }
+    return desc
+  }
+
+  useEffect(()=>{
+    window.addEventListener("resize",()=>{
+      const ismobile=window.innerWidth < 1200;
+      if(ismobile!==isMobile) setIsMobile(ismobile);
+    },false)
+  },[isMobile])
+  return <>
+       <div className="latest-post m-5">
+            
+            <div className="row border">
+                  <div className="post-pic col-md-4">
+                    <img className={`${isMobile?"m-1":"border-right m-1"}`} src={test} alt="latest post" width="250px" height="200px"/>
+                  </div>  
+                  <div className="post-details col-md-8 mt-2">
+                        <div className="row post-title">
+                        <post-title className="">How to crack IELTS at home without tutor?</post-title>
+                        </div>  
+                        <div className="row post-desc mt-2">
+                        <post-desc className="">{getDesc(str)} <post-read type="button" onClick={()=>console.log("clicked")}>Read More &gt;&gt;</post-read></post-desc>
+                        </div> 
+                        <div className="post-category mt-2">
+                        <post-category>Category : xyz</post-category> 
+                        </div> 
+                        <div className="row post-crated mt-2 mb-2">
+                          <post-author>
+                          <i className="fa fa-user p-1"></i><span>John Harvy</span>
+                          <post-date>
+                          <i class="fas fa-calendar-alt p-1"></i><span>10 Jan 2022</span>
+                          </post-date> 
+                          </post-author>
+                         
+                        </div>               
+                  </div>
+                  
+            </div>
+       </div> 
+  </>
+  ;
+};
+
+export default LatestPost;

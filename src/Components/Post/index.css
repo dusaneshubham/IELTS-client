@@ -1,0 +1,31 @@
+post-side-menu div{
+    position: -webkit-sticky;
+    position: sticky;
+    margin-top: 3rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+post-side-icon{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--heading);
+    border-radius: 50px;
+   
+}
+
+post-side-icon i{
+    margin:15px;
+    font-size:2rem;
+}
+detail-title h1{
+   color: var(--heading);
+   font-weight: bold;
+}
+
+detail-category{
+    color: var(--title);
+}

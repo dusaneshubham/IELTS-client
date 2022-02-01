@@ -1,0 +1,15 @@
+
+keyword{
+    color:var(--heading);
+    border: 2px solid var(--heading);
+    border-radius: 2px;
+    padding:10px;
+    transition: all 0.3s linear;
+    text-align: center;
+    margin: 5px;
+}
+keyword:hover{
+    background: var(--heading);
+    color:var(--white);
+    cursor: pointer;
+}
